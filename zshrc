@@ -68,17 +68,37 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=~/.oh-my-zsh/custom
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+# install 3-rd party plugins
+if [ -d "$ZSH_CUSTOPM/plugins/zsh-completions" ]; then
+	git clone https://github.com/zsh-users/zsh-completions $ZSH_CUSTOPM/plugins/zsh-completions
+fi
+
+if [ -d "$ZSH_CUSTOPM/plugins/zsh-autosuggestions" ]; then
+	git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+fi
+
+if [ -d "$ZSH_CUSTOPM/plugins/zsh-syntax-highlighting" ]; then
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+fi
+
+if [ -d "$ZSH_CUSTOPM/plugins/zsh-history-substring-search" ]; then
+	git clone https://github.com/zsh-users/zsh-history-substring-search $ZSH_CUSTOM/plugins/zsh-history-substring-search
+fi
+
+
 plugins=(
 	zsh-completions
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+	history-substring-search
 
 	conda-zsh-completion
 
@@ -112,11 +132,11 @@ export LANG=en_US.UTF-8
 export EDITOR='codium'
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='nvim'
+else
+   export EDITOR='codium'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
