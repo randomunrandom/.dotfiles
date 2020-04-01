@@ -12,7 +12,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'vim-airline/vim-airline-themes'	" themes for Airline
 	Plug 'joshdick/onedark.vim'		" OneDark theme
 	Plug 'scrooloose/nerdtree'		" invim file browser
-		Plug 'Xuyuanp/nerdtree-git-plugin'	" plugin for nerdtree
+	Plug 'Xuyuanp/nerdtree-git-plugin'	" plugin for nerdtree
 	Plug 'mhinz/vim-signify'		" show vcs status
 "	=== external tools suport ===
 	" Plug 'edkolev/tmuxline.vim'		" tmux support
