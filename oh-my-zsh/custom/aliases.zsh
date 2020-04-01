@@ -1,9 +1,9 @@
 #random only
-if ! type "hub" > /dev/null; then
+if type "hub" > /dev/null; then
 	alias git=hub
 fi
 
-if ! type "codium" > /dev/null; then
+if type "codium" > /dev/null; then
 	alias code='codium'
 fi
 
