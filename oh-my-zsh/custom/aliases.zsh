@@ -1,6 +1,11 @@
 #random only
-alias code='codium'
-alias git=hub
+if ! type "hub" > /dev/null; then
+	alias git=hub
+fi
+
+if ! type "codium" > /dev/null; then
+	alias code='codium'
+fi
 
 #
 alias ls='exa --icons --git-ignore'
