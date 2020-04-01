@@ -77,19 +77,19 @@ ZSH_CUSTOM=~/.oh-my-zsh/custom
 # Add wisely, as too many plugins slow down shell startup.
 
 # install 3-rd party plugins
-if [ -d "$ZSH_CUSTOPM/plugins/zsh-completions" ]; then
+if [[ -d "$ZSH_CUSTOPM/plugins/zsh-completions" ]]; then
 	git clone https://github.com/zsh-users/zsh-completions $ZSH_CUSTOPM/plugins/zsh-completions
 fi
 
-if [ -d "$ZSH_CUSTOPM/plugins/zsh-autosuggestions" ]; then
+if [[ -d "$ZSH_CUSTOPM/plugins/zsh-autosuggestions" ]]; then
 	git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 fi
 
-if [ -d "$ZSH_CUSTOPM/plugins/zsh-syntax-highlighting" ]; then
+if [[ -d "$ZSH_CUSTOPM/plugins/zsh-syntax-highlighting" ]]; then
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
 
-if [ -d "$ZSH_CUSTOPM/plugins/zsh-history-substring-search" ]; then
+if [[ -d "$ZSH_CUSTOPM/plugins/zsh-history-substring-search" ]]; then
 	git clone https://github.com/zsh-users/zsh-history-substring-search $ZSH_CUSTOM/plugins/zsh-history-substring-search
 fi
 
