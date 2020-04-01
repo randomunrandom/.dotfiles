@@ -11,6 +11,7 @@ Requirments
 Usage
 -----
 to use, you nit to clone this repo and use rcm to set up links
+
 example:
 ```sh
   git clone git@github.com:randomunrandom/.dotfiles.git ~/.dotfiles
