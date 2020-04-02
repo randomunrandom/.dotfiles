@@ -31,12 +31,14 @@ autocmd VimEnter * " install mising plugins
 " default updatetime 4000ms is not good for async update
 set updatetime=100
 
+let mapleader = ";"
 set encoding=UTF-8
 
 " launch NERDTree
 autocmd vimenter * NERDTree
 " map keybind for NERDTree
-map <C-f> :NERDTreeToggle<CR>
+nmap <Leader>f :NERDTreeToggle<CR>
+nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 " close NERDTree buffer it it's the only one left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
