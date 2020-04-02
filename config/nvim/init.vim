@@ -19,7 +19,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'editorconfig/editorconfig-vim'	" .editorconfig support
 	Plug 'tpope/vim-fugitive'		" enchanced git support
 	" preview for markdown
-	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+	" build from source Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 "	=== special case
 	Plug 'ryanoasis/vim-devicons'		" adds icons to many plugins
 
