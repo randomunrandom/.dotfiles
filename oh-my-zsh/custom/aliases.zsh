@@ -7,12 +7,14 @@ if type "codium" > /dev/null; then
 	alias code='codium'
 fi
 
-#
-alias ls='exa --icons --git-ignore'
-alias l='ls -1 --icons --header --git-ignore --git'
-alias ll='ls -l --icons --header --git-ignore --git'
-alias la='ls -la --icons --header --color-scale --git'
-alias ltree='la --tree --git-ignore --color-scale --git'
+	# replace ls with [exa](https://github.com/ogham/exa)
+if type "exa" > /dev/null; then
+	alias ls='exa --icons --git-ignore'
+	alias l='ls -1 --icons --header --git-ignore --git'
+	alias ll='ls -l --icons --header --git-ignore --git'
+	alias la='ls -la --icons --header --color-scale --git'
+	alias ltree='la --tree --git-ignore --color-scale --git'
+fi
 
 # common
 alias h='history'
