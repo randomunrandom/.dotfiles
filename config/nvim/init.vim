@@ -18,6 +18,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	" Plug 'edkolev/tmuxline.vim'		" tmux support
 	Plug 'editorconfig/editorconfig-vim'	" .editorconfig support
 	Plug 'tpope/vim-fugitive'		" enchanced git support
+	" preview for markdown
+	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 "	=== special case
 	Plug 'ryanoasis/vim-devicons'		" adds icons to many plugins
 
