@@ -39,6 +39,9 @@ set encoding=UTF-8
 
 " launch NERDTree
 autocmd vimenter * NERDTree
+" show hidden files and bookmarks in NERDTree
+let NERDTreeShowHidden=1
+let NERDTreeShowBookmarks=1
 " map keybind for NERDTree
 nmap <Leader>f :NERDTreeToggle<CR>
 nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
