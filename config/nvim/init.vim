@@ -65,8 +65,9 @@ set encoding=UTF-8
 " NERDTree requiements
 filetype plugin indent on
 syntax enable
-" launch NERDTree
-autocmd vimenter * NERDTree
+" launch NERDTree if no files were given
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " show hidden files and bookmarks in NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
