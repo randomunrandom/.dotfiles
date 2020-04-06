@@ -119,8 +119,10 @@ plugins=(
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_UNICODE=true
+if [[ ! -n $SSH_CONNECTION ]]; then
+	ZSH_TMUX_AUTOSTART=true
+	ZSH_TMUX_UNICODE=true
+fi
 
 PROJECT_PATHS=(~/Projects)
 source $ZSH/oh-my-zsh.sh
