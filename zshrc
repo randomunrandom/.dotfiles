@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -114,9 +114,13 @@ plugins=(
 	copyfile
 	pj
 	extract
+	tmux
 )
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
+
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_UNICODE=true
 
 PROJECT_PATHS=(~/Projects)
 source $ZSH/oh-my-zsh.sh
@@ -128,14 +132,14 @@ autoload -U compinit && compinit
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
- 
+
 export EDITOR='codium'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='nvim'
+	export EDITOR='nvim'
 else
-   export EDITOR='codium'
+	export EDITOR='codium'
 fi
 
 # Compilation flags
@@ -157,13 +161,13 @@ bindkey '\e[4~' end-of-line
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/random/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+	eval "$__conda_setup"
 else
-    if [ -f "/home/random/.miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/random/.miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/random/.miniconda3/bin:$PATH"
-    fi
+	if [ -f "/home/random/.miniconda3/etc/profile.d/conda.sh" ]; then
+		. "/home/random/.miniconda3/etc/profile.d/conda.sh"
+	else
+		export PATH="/home/random/.miniconda3/bin:$PATH"
+	fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
