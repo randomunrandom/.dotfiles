@@ -107,12 +107,12 @@ plugins=(
 	copyfile
 	pj
 	extract
-	tmux
 )
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
 if [[ ! -n $SSH_CONNECTION ]]; then
+	plugins+=(tmux)
 	ZSH_TMUX_AUTOSTART=true
 	ZSH_TMUX_UNICODE=true
 fi
