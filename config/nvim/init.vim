@@ -1,3 +1,6 @@
+" let's live in new century
+set nocompatible
+
 """"""""""""""""""""""""
 " plugin manager setup "
 """"""""""""""""""""""""
@@ -30,14 +33,26 @@ call plug#begin('~/.local/share/nvim/plugged')
 call plug#end()
 
 " install mising plugins
-autocmd VimEnter *
-	if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-		PlugInstall --sync | q
-	endif
+"autocmd VimEnter *
+"	if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+"		PlugInstall --sync | q
+"	endif
 
 """""""""""""""""""
 " nvim only setup "
 """""""""""""""""""
+" default usefull plugin
+filetype plugin on
+
+" show syntax
+syntax on
+
+" add all subdir to search path
+set path+=**
+
+" show menu for wildcards
+set wildmenu
+
 " add some custom comands
 command W w!
 
@@ -62,9 +77,6 @@ set encoding=UTF-8
 """""""""""""""""""""""""
 " might include some nvim configs for better grouping
 
-" NERDTree requiements
-filetype plugin indent on
-syntax enable
 " launch NERDTree if no files were given
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
