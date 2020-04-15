@@ -152,6 +152,10 @@ fi
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
 
+if [[ -e ~/.profile ]]; then
+	emulate sh -c 'source ~/.profile'
+fi
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/random/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -175,3 +179,4 @@ export GPG_TTY=$(tty)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export SCILAB_EXECUTABLE="/home/random/scilab-6.0.2/bin/scilab-adv-cli"
+
