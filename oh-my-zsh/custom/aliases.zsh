@@ -7,7 +7,17 @@ if type "codium" > /dev/null; then
 	alias code='codium'
 fi
 
-	# replace ls with [exa](https://github.com/ogham/exa)
+if type "dnf" > /dev/null; then
+	alias dnf='dnf --color always'
+fi
+
+alias docker_paper="docker --tlsverify \
+	--tlscacert=/home/random/.docker/certificates/papertext/ca.pem \
+	--tlscert=/home/random/.docker/certificates/papertext/cert.pem \
+	--tlskey=/home/random/.docker/certificates/papertext/key.pem \
+	-H=papertext.ru:2375"
+
+# replace ls with [exa](https://github.com/ogham/exa)
 if type "exa" > /dev/null; then
 	alias ls='exa --icons --git-ignore'
 	alias l='ls -1 --icons --header --git-ignore --git'
