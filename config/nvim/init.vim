@@ -15,21 +15,30 @@ endif
 " add plugins
 call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/vim-plug'		" for documentation only
+
 	Plug 'machakann/vim-highlightedyank'	" highlight yanked area
+	Plug 'ryanoasis/vim-devicons'		" adds icons to many plugins
+
 	Plug 'vim-airline/vim-airline'		" improved statusline
-	Plug 'vim-airline/vim-airline-themes'	" themes for Airline
-	Plug 'joshdick/onedark.vim'		" OneDark theme
-	Plug 'scrooloose/nerdtree'		" invim file browser
-	Plug 'Xuyuanp/nerdtree-git-plugin'	" plugin for nerdtree
-	Plug 'mhinz/vim-signify'		" show vcs status
+		Plug 'vim-airline/vim-airline-themes'	" themes for Airline
+
+	" Plug 'joshdick/onedark.vim'		" OneDark theme
+	Plug 'morhetz/gruvbox'			" gruvbox theme
+
+	Plug 'scrooloose/nerdtree'		" nvim file browser
+		Plug 'Xuyuanp/nerdtree-git-plugin'		" adds git support
+		Plug 'tiagofumo/vim-nerdtree-syntax-highlight'	" adds color highlighting
+	Plug 'preservim/nerdcommenter'		" commenter
+
 "	=== external tools suport ===
+	Plug 'airblade/vim-gitgutter'		" show git per line status
+	Plug 'tpope/vim-fugitive'		" enchanced git support
 	Plug 'edkolev/tmuxline.vim'		" tmux support
 	Plug 'editorconfig/editorconfig-vim'	" .editorconfig support
-	Plug 'tpope/vim-fugitive'		" enchanced git support
 	" preview for markdown
 	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-"	=== special case
-	Plug 'ryanoasis/vim-devicons'		" adds icons to many plugins
+	" completions from vscode plugins
+	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " install mising plugins
@@ -47,6 +56,9 @@ filetype plugin on
 " show syntax
 syntax on
 
+" don't show -- INSERT --
+set noshowmode
+
 " add all subdir to search path
 set path+=**
 
@@ -57,10 +69,10 @@ set wildmenu
 command W w!
 
 " show line numbers
-set number
+set number relativenumber
 
 " increase update time from 4000 for better async update
-set updatetime=1000
+set updatetime=500
 
 " set leader to ;, as in :, but without shift
 let mapleader = ";"
@@ -75,45 +87,38 @@ set encoding=UTF-8
 """""""""""""""""""""""""
 " Plugin specific setup "
 """""""""""""""""""""""""
-" might include some nvim configs for better grouping
+let g:indent_guides_enable_on_vim_startup = 1
+
+let g:NERDTreeIgnore = ['^node_modules$', '^.git$']
+let NERDTreeShowHidden=1
+
+let NERDTreeShowBookmarks=1
 
 " launch NERDTree if no files were given
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " show hidden files and bookmarks in NERDTree
-let NERDTreeShowHidden=1
-let NERDTreeShowBookmarks=1
 
 " map keybind for NERDTree
-nmap <Leader>f :NERDTreeToggle<CR>
-nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
+nmap <leader>b :NERDTreeToggle<CR>
 
 " close NERDTree buffer it it's the only one left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" NERDTress File highlighting
-function! NERDTreeHighlightFile(extension, fg)
-	exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermfg='. a:fg .' guifg='. a:fg
-	".' ctermbg='. a:bg .' guibg='. a:guibg
-	exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
+let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeGitStatusWithFlags = 1
 
-" config like file
-call NERDTreeHighlightFile('conf',	'yellow')
-call NERDTreeHighlightFile('config',	'yellow')
-call NERDTreeHighlightFile('ini',	'yellow')
-call NERDTreeHighlightFile('json',	'yellow')
-call NERDTreeHighlightFile('yml',	'yellow')
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
 
-call NERDTreeHighlightFile('md',	'blue')
-
-call NERDTreeHighlightFile('html',	'brown')
-call NERDTreeHighlightFile('css',	'cyan')
-call NERDTreeHighlightFile('js',	'red')
+let g:NERDSpaceDelims = 1
+map <Leader>c NERDCommenterToggle
 
 " theme setup
 set termguicolors
-colorscheme onedark
+set background=dark
+colorscheme gruvbox
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_flat'
 
