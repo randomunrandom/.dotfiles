@@ -10,7 +10,9 @@ My [Fedora-KDE](https://spins.fedoraproject.org/kde/) setup
         zsh         `: prefered shell`\
         tmux        `: terminal multiplexer`\
         bat         `: modern cat written in rust`\
-        exa         `: modern ls written in rust`
+        exa         `: modern ls written in rust`\
+        java-1.8.0-openjdk  `: for minecraft`\
+        java-11-openjdk     `: for everything else`\
 
     # install oh-my-zsh and change default shell to zsh
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -94,7 +96,6 @@ My [Fedora-KDE](https://spins.fedoraproject.org/kde/) setup
     Widgets:
     1. Active Window Control
     1. Latte sidebar
-
     !!! configs: ~/.config/lattedock-appletsrc cat ~/.config/lattedockrc !!!
 
 6. kde theme setup
