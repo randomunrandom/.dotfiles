@@ -27,6 +27,7 @@ My [Fedora-KDE](https://spins.fedoraproject.org/kde/) setup
     ```
 
 2. setup firefox
+
     While all packages are installing, setup firefox:\
     goto [duckduckgo](https://duckduckgo.com/app) and install firefox extension\
     install [Plasma Integration Extension](https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/)\
