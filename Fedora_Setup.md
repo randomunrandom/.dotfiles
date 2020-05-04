@@ -153,3 +153,5 @@ sudo dnf install codium
 ```sh
 dnf install flameshot
 ```
+**[Telegram](https://desktop.telegram.org/)**
+**[JetBrains IDE](https://www.jetbrains.com/)**
