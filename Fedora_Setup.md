@@ -158,5 +158,16 @@ sudo dnf install codium
 ```sh
 dnf install flameshot
 ```
+**Spotify**
+Requires [rpm-fusion](https://rpmfusion.org/Configuration)
+```sh
+sudo dnf install lpf-spotify-client
+lpf update
+```
+**rar**
+```sh
+sudo dnf config-manager --add-repo=https://negativo17.org/repos/fedora-rar.repo
+sudo dnf install rar
+```
 **[Telegram](https://desktop.telegram.org/)**
 **[JetBrains IDE](https://www.jetbrains.com/)**
