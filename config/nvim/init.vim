@@ -100,7 +100,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " show hidden files and bookmarks in NERDTree
 
 " map keybind for NERDTree
-nmap <leader>b :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeToggle<CR>
 
 " close NERDTree buffer it it's the only one left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
