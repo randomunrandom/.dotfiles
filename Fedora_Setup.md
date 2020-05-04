@@ -4,11 +4,13 @@ My [Fedora-KDE](https://spins.fedoraproject.org/kde/) setup
     ```sh
     sudo dnf update -y
     sudo dnf install -y \
-        git    `: `\
-        neovim `: prefered tui editor`\
+        git         `: `\
+        neovim      `: prefered tui editor`\
             python3-neovim `: python support for nvim`
-        zsh    `: prefered shell`\
-        tmux   `: terminal multiplexer`\
+        zsh         `: prefered shell`\
+        tmux        `: terminal multiplexer`\
+        bat         `: modern cat written in rust`\
+        exa         `: modern ls written in rust`
 
     # install oh-my-zsh and change default shell to zsh
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -72,9 +74,10 @@ My [Fedora-KDE](https://spins.fedoraproject.org/kde/) setup
     Then add it to your [GitHub](https://github.com/settings/keys) and [GitLab](https://gitlab.com/profile/gpg_keys) accounts.
 5. latte-dock and global menu setup
 
-    install latte dock
+    install latte dock and dependencies for global menu
     ```sh
-    sudo dnf install -y latte-dock
+    sudo dnf install -y latte-dock \
+        appmenu-qt5 libdbusmenu-gtk3
     ```
     run it in background(temporarym will self-setup and add to autostart)
     ```sh
