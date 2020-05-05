@@ -13,6 +13,7 @@ My [Fedora-KDE](https://spins.fedoraproject.org/kde/) setup
         exa         `: modern ls written in rust`\
         java-1.8.0-openjdk  `: for minecraft`\
         java-11-openjdk     `: for everything else`\
+        htop        `: modern top`\
 
     # install oh-my-zsh and change default shell to zsh
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -64,7 +65,18 @@ My [Fedora-KDE](https://spins.fedoraproject.org/kde/) setup
     ```
 4. git setup
 
-    create GPG key, find it, export it and make git use it.
+    genereta ssh key. you can choose either rsa or ecdsa
+    1. rsa variant
+        ```sh
+        ssh-keygen -t rsa -b 16384
+        ```
+    2. ecdsa variant
+        ```sh
+        ssh-keygen -t ed25519
+        ```
+    Then add them to your [github](https://github.com/settings/keys) and [gitlab](https://gitlab.com/profile/keys) account
+
+    create GPG key, find it, export it, add it to github and make git use it
     ```sh
     gpg --default-new-key-algo rsa4096 --gen-key
     gpg --list-secret-keys --keyid-format LONG
@@ -103,6 +115,8 @@ My [Fedora-KDE](https://spins.fedoraproject.org/kde/) setup
     Goto System settings > Global Theme > Get New Global Themes... and search for [sweet](https://store.kde.org/p/1294729). After install close window, choose Sweet and Apply\
     Goto System settings > Startup and Shutdown > Login screen(SDDM), choose sweet and click Apply\
     Goto `System settings` > `Window Management` > `Task Switcher`, choose `Thumbnail Grid` undder `Visualization` and click Apply
+    Goto `System settings` > `Application Style` > `Application style`, click GNOME/GTK Application Style
+        Firstly, istall Sweet GTK3 theme, then choose it as both GTK2 and GTK3
 
     Choose on of the following:
     1. Basic setup:
