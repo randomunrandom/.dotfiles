@@ -116,7 +116,7 @@ My [Fedora-KDE](https://spins.fedoraproject.org/kde/) setup
     Goto System settings > Startup and Shutdown > Login screen(SDDM), choose sweet and click Apply\
     Goto `System settings` > `Window Management` > `Task Switcher`, choose `Thumbnail Grid` undder `Visualization` and click Apply
     Goto `System settings` > `Application Style` > `Application style`, click GNOME/GTK Application Style
-        Firstly, istall Sweet GTK3 theme, then choose it as both GTK2 and GTK3
+        Firstly, istall Sweet-dark GTK3 theme, then choose it as both GTK2 and GTK3
 
     Choose on of the following:
     1. Basic setup:
